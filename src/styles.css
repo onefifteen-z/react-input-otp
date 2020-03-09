@@ -1,8 +1,43 @@
-/* add css styles here (optional) */
+.otpWrapper {
+  display: flex;
+}
 
-.test {
-  display: inline-block;
-  margin: 2em auto;
-  border: 2px solid #000;
-  font-size: 2em;
+.otpInputWrapper {
+  height: 48px;
+  max-width: 40px;
+  min-width: 40px;
+  margin-right: 8px;
+}
+
+.otpInputWrapper > input {
+  width: 100%;
+  height: inherit;
+
+  border: 1px solid;
+  border-radius: 10%;
+  border-color: #cdcdcd;
+  outline: none;
+
+  font-size: 2rem;
+  text-align: center;
+  color: #4a4a4a;
+}
+
+.otpInputWrapper.error > input, .otpInputWrapper.error > input:focus {
+  border-color: #d0021b;
+}
+
+.otpInputWrapper > input:focus {
+  border-color: #20c4f4;
+}
+
+.otpInputWrapper > input:disabled {
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  margin: 8px 0 0 0;
+  color: #d0021b;
+  font-size: 0.8rem;
 }
