@@ -4,8 +4,6 @@ import styles from './styles.css';
 
 const KEY = {
   delete: 8,
-  left: 37,
-  right: 39,
 };
 
 class InputOTP extends Component {
@@ -46,8 +44,22 @@ class InputOTP extends Component {
 
     const handleKeyDown = (e, i) => {
       if (e.keyCode === KEY.delete && e.target.value === '') focusOn(i - 1);
-      if (e.keyCode === KEY.left) focusOn(i - 1);
-      if (e.keyCode === KEY.right && e.target.value !== '') focusOn(i + 1);
+    };
+
+    const handlePaste = (e, i) => {
+      const pastedString = e.clipboardData
+        .getData('text/plain')
+        .replace(pattern || (numberOnly ? /[^0-9]/gi : /[^0-9a-zA-Z]/gi), '')
+        .slice(0, otpLength - i);
+
+      const pastedData = pastedString.split('');
+
+      this.doms[otpLength - 1].focus();
+      for (let pos = i; pos < otpLength; pos += 1) {
+        this.doms[pos].value = pastedData.shift();
+      }
+      const otpCode = this.doms.map(d => d.value).join('');
+      onChange(otpCode);
     };
 
     const codeBoxItems = [...Array(otpLength).keys()].map(i => (
@@ -68,6 +80,7 @@ class InputOTP extends Component {
           onFocus={e => e.target.select()}
           onChange={e => handleChange(e, i)}
           onKeyDown={e => handleKeyDown(e, i)}
+          onPaste={e => handlePaste(e, i)}
           disabled={disabled}
         />
       </div>
