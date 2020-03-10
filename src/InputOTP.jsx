@@ -18,7 +18,7 @@ class InputOTP extends Component {
     const {
       otpLength,
       numberOnly,
-      inputType,
+      type,
       pattern,
       disabled,
       error,
@@ -76,7 +76,7 @@ class InputOTP extends Component {
         key={i}
       >
         <input
-          type={inputType}
+          type={type}
           autoComplete="false"
           autoCorrect="off"
           autoCapitalize="off"
@@ -110,7 +110,7 @@ class InputOTP extends Component {
 InputOTP.propTypes = {
   value: PropTypes.string,
   otpLength: PropTypes.number,
-  inputType: PropTypes.string,
+  type: PropTypes.string,
   numberOnly: PropTypes.bool,
   autoFocus: PropTypes.bool,
   pattern: PropTypes.instanceOf(RegExp),
@@ -127,7 +127,7 @@ InputOTP.propTypes = {
 InputOTP.defaultProps = {
   value: '',
   otpLength: 6,
-  inputType: 'tel',
+  type: 'tel',
   numberOnly: false,
   autoFocus: false,
   pattern: null,

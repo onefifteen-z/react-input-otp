@@ -13,6 +13,7 @@ export default class App extends Component {
   render () {
     const handleChange = otpCode => {
       this.setState({ otpCode });
+      console.log(otpCode);
     };
 
     return (
@@ -39,7 +40,11 @@ export default class App extends Component {
             </form>
             <form>
               <h4>4-Digit Number Only</h4>
-              <InputOTP numberOnly otpLength={4}/>
+              <InputOTP numberOnly otpLength={4} />
+            </form>
+            <form>
+              <h4>Password</h4>
+              <InputOTP type='password' />
             </form>
             <form>
               <h4>Default Value</h4>
