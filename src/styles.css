@@ -9,7 +9,7 @@
   margin-right: 8px;
 }
 
-.otpInputWrapper > input {
+.otpInput {
   width: 100%;
   height: inherit;
 
@@ -23,17 +23,17 @@
   color: #4a4a4a;
 }
 
-.otpInputWrapper.error > input, .otpInputWrapper.error > input:focus {
-  border-color: #d0021b;
-}
-
-.otpInputWrapper > input:focus {
+.otpInput:focus {
   border-color: #20c4f4;
 }
 
-.otpInputWrapper > input:disabled {
+.otpInput:disabled {
   background-color: #eee;
   cursor: not-allowed;
+}
+
+.error > .otpInput, .error > .otpInput:focus {
+  border-color: #d0021b;
 }
 
 .errorMessage {
