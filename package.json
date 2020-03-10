@@ -1,7 +1,7 @@
 {
   "name": "react-input-otp",
   "version": "1.0.0",
-  "description": "",
+  "description": "A fully flexible one-time password input component for ReactJS.",
   "author": "onefifteen-z",
   "license": "MIT",
   "repository": "onefifteen-z/react-input-otp",

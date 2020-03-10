@@ -20,5 +20,6 @@ module.exports = {
     "react/jsx-props-no-spreading": 0,
     'jsx-a11y/label-has-associated-control': 0,
     'jsx-a11y/control-has-associated-label': 0,
+    'import/prefer-default-export': 0,
   }
 }

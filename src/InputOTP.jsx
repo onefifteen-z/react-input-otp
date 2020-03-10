@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { KEY } from 'constants';
 import styles from './styles.css';
-
-const KEY = {
-  backspace: 8,
-  left: 37,
-  right: 39,
-};
 
 class InputOTP extends Component {
   constructor(props) {
