@@ -42,6 +42,10 @@ export default class App extends Component {
               <InputOTP numberOnly otpLength={4}/>
             </form>
             <form>
+              <h4>Default Value</h4>
+              <InputOTP otpLength={6} value="123456"/>
+            </form>
+            <form>
               <h4>Disabled</h4>
               <InputOTP disabled/>
             </form>

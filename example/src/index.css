@@ -29,7 +29,7 @@ body {
 .sidebar p{
   padding: 0 15px;
   color: #7f7f7f;
-  font-size: 0.5rem;
+  font-size: 1rem;
 }
 
 .sidebar .bottom {
@@ -54,7 +54,7 @@ body {
 }
 
 .sidebar-title em {
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   color: #7f7f7f;
   margin-left: 10px;
 }

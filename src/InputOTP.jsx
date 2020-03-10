@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import styles from './styles.css';
 
 const KEY = {
-  delete: 8,
+  backspace: 8,
+  left: 37,
+  right: 39,
 };
 
 class InputOTP extends Component {
@@ -26,30 +28,36 @@ class InputOTP extends Component {
       error,
       errorMessage,
       onChange,
+      autoFocus,
+      value,
+      ...rest
     } = this.props;
+
+    const inputFilter = pattern || (numberOnly ? /[^0-9]/gi : /[^0-9a-zA-Z]/gi);
 
     const focusOn = i => {
       if (this.doms[i]) this.doms[i].focus();
     };
 
     const handleChange = (e, i) => {
-      e.target.value = e.target.value.replace(
-        pattern || (numberOnly ? /[^0-9]/gi : /[^0-9a-zA-Z]/gi),
-        '',
-      );
+      e.target.value = e.target.value.replace(inputFilter, '');
+      if (e.target.value.length > 1)
+        e.target.value = e.target.value.slice(0, 1);
       if (e.target.value !== '') focusOn(i + 1);
       const otpCode = this.doms.map(d => d.value).join('');
       onChange(otpCode);
     };
 
     const handleKeyDown = (e, i) => {
-      if (e.keyCode === KEY.delete && e.target.value === '') focusOn(i - 1);
+      if (e.keyCode === KEY.backspace && e.target.value === '') focusOn(i - 1);
+      if (e.keyCode === KEY.left) focusOn(i - 1);
+      if (e.keyCode === KEY.right) focusOn(i + 1);
     };
 
     const handlePaste = (e, i) => {
       const pastedString = e.clipboardData
         .getData('text/plain')
-        .replace(pattern || (numberOnly ? /[^0-9]/gi : /[^0-9a-zA-Z]/gi), '')
+        .replace(inputFilter, '')
         .slice(0, otpLength - i);
 
       const pastedData = pastedString.split('');
@@ -69,7 +77,6 @@ class InputOTP extends Component {
       >
         <input
           type="tel"
-          maxLength="1"
           autoComplete="false"
           autoCorrect="off"
           autoCapitalize="off"
@@ -82,6 +89,8 @@ class InputOTP extends Component {
           onKeyDown={e => handleKeyDown(e, i)}
           onPaste={e => handlePaste(e, i)}
           disabled={disabled}
+          defaultValue={value && value[i]}
+          {...rest}
         />
       </div>
     ));
@@ -98,6 +107,7 @@ class InputOTP extends Component {
 }
 
 InputOTP.propTypes = {
+  value: PropTypes.string,
   otpLength: PropTypes.number,
   numberOnly: PropTypes.bool,
   autoFocus: PropTypes.bool,
@@ -109,6 +119,7 @@ InputOTP.propTypes = {
 };
 
 InputOTP.defaultProps = {
+  value: '',
   otpLength: 6,
   numberOnly: false,
   autoFocus: false,
