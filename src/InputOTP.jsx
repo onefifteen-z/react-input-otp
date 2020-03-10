@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { KEY } from 'constants';
+import { KEY } from './constants';
 import styles from './styles.css';
 
 class InputOTP extends Component {
@@ -18,6 +18,7 @@ class InputOTP extends Component {
     const {
       otpLength,
       numberOnly,
+      inputType,
       pattern,
       disabled,
       error,
@@ -25,6 +26,10 @@ class InputOTP extends Component {
       onChange,
       autoFocus,
       value,
+      wrapperClass,
+      inputWrapperClass,
+      inputClass,
+      errorMessageClass,
       ...rest
     } = this.props;
 
@@ -67,15 +72,16 @@ class InputOTP extends Component {
 
     const codeBoxItems = [...Array(otpLength).keys()].map(i => (
       <div
-        className={`${styles.otpInputWrapper} ${error ? styles.error : ''}`}
+        className={`${inputWrapperClass} ${error ? styles.error : ''}`}
         key={i}
       >
         <input
-          type="tel"
+          type={inputType}
           autoComplete="false"
           autoCorrect="off"
           autoCapitalize="off"
           spellCheck="false"
+          className={inputClass}
           ref={dom => {
             this.doms[i] = dom;
           }}
@@ -91,10 +97,10 @@ class InputOTP extends Component {
     ));
 
     return (
-      <div className={styles.wrapper}>
-        <div className={styles.otpWrapper}>{codeBoxItems}</div>
+      <div>
+        <div className={wrapperClass}>{codeBoxItems}</div>
         {error && errorMessage && (
-          <p className={styles.errorMessage}>{errorMessage}</p>
+          <p className={errorMessageClass}>{errorMessage}</p>
         )}
       </div>
     );
@@ -104,6 +110,7 @@ class InputOTP extends Component {
 InputOTP.propTypes = {
   value: PropTypes.string,
   otpLength: PropTypes.number,
+  inputType: PropTypes.string,
   numberOnly: PropTypes.bool,
   autoFocus: PropTypes.bool,
   pattern: PropTypes.instanceOf(RegExp),
@@ -111,11 +118,16 @@ InputOTP.propTypes = {
   errorMessage: PropTypes.string,
   disabled: PropTypes.bool,
   onChange: PropTypes.func,
+  wrapperClass: PropTypes.string,
+  inputWrapperClass: PropTypes.string,
+  inputClass: PropTypes.string,
+  errorMessageClass: PropTypes.string,
 };
 
 InputOTP.defaultProps = {
   value: '',
   otpLength: 6,
+  inputType: 'tel',
   numberOnly: false,
   autoFocus: false,
   pattern: null,
@@ -123,6 +135,10 @@ InputOTP.defaultProps = {
   error: false,
   errorMessage: null,
   onChange: () => {},
+  wrapperClass: styles.otpWrapper,
+  inputWrapperClass: styles.otpInputWrapper,
+  inputClass: styles.otpInput,
+  errorMessageClass: styles.errorMessage,
 };
 
 export default InputOTP;
