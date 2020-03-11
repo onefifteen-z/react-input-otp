@@ -5,10 +5,9 @@ body {
 }
 
 .container {
-  display: flex;
-    width: 100%;
-    min-height: 100vh;
-    height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .sidebar {
@@ -16,10 +15,37 @@ body {
   z-index: 1;
   background-color: #1b1c1d;
   width: 250px;
-  max-height: 100vh;
-  flex: 0 0 auto;
-  top: 0;
-  bottom: 0;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+
+  padding: 2rem;
+  margin-left: 250px;
+}
+
+.sidebar .bottom {
+  position: absolute;
+  bottom: 10px;
+  padding: 15px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .sidebar .bottom {
+    position: relative;
+  }
+
+  .wrapper {
+    margin-left: 0px;
+  }
 }
 
 .sidebar a {
@@ -30,12 +56,6 @@ body {
   padding: 0 15px;
   color: #7f7f7f;
   font-size: 1rem;
-}
-
-.sidebar .bottom {
-  position: absolute;
-  bottom: 10px;
-  padding: 15px;
 }
 
 .sidebar .bottom span {
@@ -50,20 +70,12 @@ body {
 
 .sidebar-title {
   color: #ffffff;
-  margin: 15px;
+  margin: 0px;
+  padding: 15px;
 }
 
 .sidebar-title em {
   font-size: 0.7rem;
   color: #7f7f7f;
   margin-left: 10px;
-}
-
-.wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 2rem;
-  width: 100%;
 }

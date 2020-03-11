@@ -19,7 +19,7 @@ export default class App extends Component {
     return (
       <div className='container'>
         <div className='sidebar'>
-          <h3 className='sidebar-title'>React OTP<em>v0.8.1</em></h3>
+          <h3 className='sidebar-title'>React OTP<em>v0.8.2</em></h3>
           <p>A fully flexible one-time password input component for ReactJS.</p>
           <div className='bottom'>
             <a href='https://github.com/onefifteen-z/react-input-otp'>
