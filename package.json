@@ -1,5 +1,5 @@
 {
-  "name": "@onefifteen-z/react-input-otp",
+  "name": "react-input-otp",
   "version": "1.0.2",
   "description": "A fully flexible one-time password input component for ReactJS.",
   "keywords": ["OTP", "one time password", "input-otp", "otp-input", "React", "input"],
