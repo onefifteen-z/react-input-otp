@@ -21,6 +21,7 @@
   font-size: 2rem;
   text-align: center;
   color: #4a4a4a;
+  padding: 0 1px;
 }
 
 .otpInput:focus {
