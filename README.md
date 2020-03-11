@@ -5,7 +5,7 @@
 ## Install
 
 ```bash
-npm install --save react-input-otp
+npm install --save @onefifteen-z/react-input-otp
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install --save react-input-otp
 ```jsx
 import React, { Component } from 'react';
 
-import InputOtp from 'react-input-otp';
+import InputOtp from '@onefifteen-z/react-input-otp';
 
 export default class App extends Component {
   constructor(props) {
