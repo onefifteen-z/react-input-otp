@@ -1,7 +1,5 @@
 # react-input-otp
 
->
-
 [![NPM](https://img.shields.io/npm/v/react-input-otp.svg)](https://www.npmjs.com/package/react-input-otp) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
@@ -11,6 +9,8 @@ npm install --save react-input-otp
 ```
 
 ## Usage
+
+[Example](https://onefifteen-z.github.io/react-input-otp)
 
 ```jsx
 import React, { Component } from 'react';
