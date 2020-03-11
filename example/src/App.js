@@ -13,7 +13,6 @@ export default class App extends Component {
   render () {
     const handleChange = otpCode => {
       this.setState({ otpCode });
-      console.log(otpCode);
     };
 
     return (
@@ -63,4 +62,4 @@ export default class App extends Component {
       </div>
     )
   }
-}
+};
