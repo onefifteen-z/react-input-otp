@@ -1,6 +1,6 @@
 # react-input-otp
 
-[![NPM](https://img.shields.io/npm/v/react-input-otp.svg)](https://www.npmjs.com/package/react-input-otp) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@onefifteen-z/react-input-otp.svg)](https://www.npmjs.com/package/@onefifteen-z/react-input-otp) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
@@ -70,10 +70,10 @@ npm start
 ```
 
 ## Contributing
-Feel free to open [issues](https://github.com/devfolioco/react-otp-input/issues/new/choose) and [pull requests](https://github.com/devfolioco/react-otp-input/pulls).
+Feel free to open [issues](https://github.com/onefifteen-z/react-input-otp/issues/new/choose) and [pull requests](https://github.com/onefifteen-z/react-input-otp/pulls).
 
 
 ## License
-![NPM](https://img.shields.io/npm/l/react-input-otp)
+![NPM](https://img.shields.io/npm/l/@onefifteen-z/react-input-otp)
 
 MIT © [onefifteen-z](https://github.com/onefifteen-z)
