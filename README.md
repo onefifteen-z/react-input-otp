@@ -2,6 +2,7 @@
 
 [![NPM](https://img.shields.io/npm/v/@onefifteen-z/react-input-otp.svg)](https://www.npmjs.com/package/@onefifteen-z/react-input-otp) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+![Kapture 2020-03-12 at 9 47 16](https://user-images.githubusercontent.com/35680082/76476865-dc9d3500-6446-11ea-8380-f414270976aa.gif)
 ## Install
 
 ```bash
